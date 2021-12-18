@@ -57,9 +57,9 @@ public class Home : MonoBehaviour
         {
             level -= 1;
             if (level == 1)
-                TxtLevel.GetComponent<TMP_Text>().text = "Easy";
+                TxtLevel.GetComponent<TMP_Text>().text = "Facile";
             if (level == 2)
-                TxtLevel.GetComponent<TMP_Text>().text = "Medium";
+                TxtLevel.GetComponent<TMP_Text>().text = "Intermedio";
         }
     }
     public void UpperLevel()
@@ -68,9 +68,9 @@ public class Home : MonoBehaviour
         {
             level += 1;
             if (level == 3)
-                TxtLevel.GetComponent<TMP_Text>().text = "Hard";
+                TxtLevel.GetComponent<TMP_Text>().text = "Difficile";
             if (level == 2)
-                TxtLevel.GetComponent<TMP_Text>().text = "Medium";
+                TxtLevel.GetComponent<TMP_Text>().text = "Intermedio";
         }
     }
     public void LowerLetter()
