@@ -10,7 +10,7 @@ public class FunFact : MonoBehaviour
     public String[] factEarth, factSoil, factSea, factBuilding, factSky, factSpace;
     public int rand;
 
-    void Awake()
+    public void Awake()
     {
         rand = Random.Range(0, factEarth.Length);
         if (PlayerMovement.earth) 
