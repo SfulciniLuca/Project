@@ -9,13 +9,14 @@ public class ChangeCard : MonoBehaviour
     public String[] names, names2, names3;
     public int[] valori, valori2, valori3;
     private int soft = 1, hard = 0;
-    public int val, rand;
+    public int val, rand, totalQuestions, coinSaver1, coinSaver2;
     public GameObject Photo, Txt, Timer;
     public GameObject Coin1, Coin2;
-    public GameObject CanvasCorrect, CanvasWrong;
-    public float timeLeft = 5.0f;
+    public GameObject CanvasCorrect, CanvasWrong, CanvasFunFact, Canvas;
+    public float timeLeft = 5.0f, timeFunFact;
     public Home home;
     private bool randomUpdate = true;
+    public Button click;
     public void Update()
     {
         Coin1.gameObject.SetActive(false);
@@ -38,8 +39,10 @@ public class ChangeCard : MonoBehaviour
                 break;
             }
         }
+        
         timeLeft -= Time.deltaTime;
         Timer.GetComponent<Text>().text = (Mathf.Round(timeLeft * 10.0f) * 0.1f).ToString();
+        
         if (timeLeft <= 0.0f)
         {
             PlayerMovement.totalNotCorrect += 1;
@@ -97,6 +100,17 @@ public class ChangeCard : MonoBehaviour
         gameObject.SetActive(false);
         timeLeft = 5.0f;
         randomUpdate = true;
+        
+        totalQuestions = PlayerMovement.totalCorrect + PlayerMovement.totalNotCorrect;
+        if (totalQuestions == 10) //break with fun fact after every 10 questions
+        {
+            Button btn = click.GetComponent<Button>();
+            btn.onClick.AddListener(Continue);
+            coinSaver1 = PlayerMovement.coinCounter;
+            coinSaver2 = PlayerMovement.collectedCoins;
+            CanvasFunFact.gameObject.SetActive(true);
+            Canvas.gameObject.SetActive(false);
+        }
     }
     public void HardSound()
     {
@@ -113,5 +127,24 @@ public class ChangeCard : MonoBehaviour
         gameObject.SetActive(false);
         timeLeft = 5.0f;
         randomUpdate = true;
+
+        totalQuestions = PlayerMovement.totalCorrect + PlayerMovement.totalNotCorrect;
+        if (totalQuestions == 10) //break with fun fact after every 10 questions
+        {
+            Button btn = click.GetComponent<Button>();
+            btn.onClick.AddListener(Continue);
+            coinSaver1 = PlayerMovement.coinCounter;
+            coinSaver2 = PlayerMovement.collectedCoins;
+            CanvasFunFact.gameObject.SetActive(true);
+            Canvas.gameObject.SetActive(false);
+        }
+    }
+    public void Continue()
+    {
+        CanvasFunFact.gameObject.SetActive(false);
+        Canvas.gameObject.SetActive(true);
+        PlayerMovement.coinCounter = coinSaver1;
+        PlayerMovement.collectedCoins = coinSaver2;
+        totalQuestions -= 10;
     }
 }
