@@ -349,17 +349,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Txt: {fileID: 1629711073}
   factEarth:
-  - la terra su cui viviamo ha circa 4.6 miliardi di anni!
+  - "La Terra su cui viviamo ha circa 4.6 miliardi di anni. Per i primi tempi sulla
+    Terra erano presenti circostanze geologicamente violente, con il pianeta che
+    subiva una pioggia costante di meteoriti: era una palla di fuoco! Una volta cessati,
+    la Terra si \xE8 raffreddata e la sua superficie si \xE8 solidificata in una
+    crosta ed un primo strato di rocce."
   factSoil:
-  - soil fact
+  - Per gran parte della storia della Terra sono stati presenti i dinosauri. Infatti,
+    per circa 150 milioni di anni, sono stati la specie dominante sulla Terra fino
+    alla loro estinzione. La maggior parte delle teorie suggerisce che si sia verificato
+    un evento catastrofico, come un meteorite gigante, che ha posto fine al regno
+    dei dinosauri. Oggi possiamo trovare alcuni fossili durante lo scavo!
   factSea:
-  - sea fact
+  - "Abbiamo esplorato solamente circa il 5% degli oceani. C\u2019\xE8 ancora molto
+    da scoprire! "
   factBuilding:
-  - building fact
+  - "I grattacieli oscillano un po\u2019 quando soffia il vento, ma non preoccuparti!"
   factSky:
-  - sky fact
+  - "Anche gli altri pianeti hanno un loro cielo. Siccome i tipi di gas presenti
+    nelle loro atmosfere sono diversi, presentano dei colori differenti. Per esempio,
+    il cielo su Marte \xE8 rosso. "
   factSpace:
-  - space fact
+  - "Quasi ogni stella che vedi \xE8 pi\xF9 grande e pi\xF9 luminosa del sole. "
   rand: 0
 --- !u!114 &64957283
 MonoBehaviour:
@@ -9426,7 +9437,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -9516,7 +9527,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1019097037}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -277, z: 0.000000006224717}
+  m_LocalPosition: {x: 0, y: -276.2, z: 0.000000006224717}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1.5}
   m_Children:
   - {fileID: 1437039768}

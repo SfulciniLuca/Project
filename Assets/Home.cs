@@ -6,17 +6,18 @@ public class Home : MonoBehaviour
     public GameObject Canvas, CanvasStat, Coin, Coin2, Player;
     public GameObject TxtLetter, TxtLevel;
     public double prob;
-    public int level, letter;
+    public int letter;
+    public static int level;
     public static float speed;
     public GameObject BG1, BG2, BG3, BG4, BG5, BG6;
-
+    
     public void Play()
     {
-        //PlayerMovement.audioSource.Play();
         Coin.gameObject.SetActive(true);
         Coin2.gameObject.SetActive(true);
         Player.gameObject.SetActive(true);
         Time.timeScale = 1;
+        PlayerMovement.audioSource.Play();
         PlayerMovement.coinCounter = 0;
         PlayerMovement.collectedCoins = 0;
         switch (level)

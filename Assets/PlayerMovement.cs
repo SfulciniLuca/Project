@@ -1,7 +1,5 @@
 using UnityEngine;
 using TMPro;
-using System;
-using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class PlayerMovement : MonoBehaviour
@@ -52,17 +50,14 @@ public class PlayerMovement : MonoBehaviour
         {
             Baloon3.gameObject.SetActive(false);
         }
-
         if (totalNotCorrect == 10)
         {
             Baloon2.gameObject.SetActive(false);
         }
-
         if (totalNotCorrect == 15)
         {
             Baloon1.gameObject.SetActive(false);
         }
-
         if (totalNotCorrect == 20)
         {
             Baloon4.gameObject.SetActive(false);
@@ -86,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if (totalCorrect == 5) // code to change te background after x correct answers
-            {
+        {
                 coinSaver1 = coinCounter;
                 coinSaver2 = collectedCoins;
                 timeLeft -= Time.deltaTime;
@@ -108,9 +103,9 @@ public class PlayerMovement : MonoBehaviour
 
                 earth = false; // to link fun facts to background
                 soil = true;
-            }
+        }
         else if (totalCorrect == 10)
-            {
+        {
                 coinSaver1 = coinCounter;
                 coinSaver2 = collectedCoins;
                 timeLeft -= Time.deltaTime;
@@ -134,7 +129,7 @@ public class PlayerMovement : MonoBehaviour
                 sea = true;
             }
         else if (totalCorrect == 15)
-            {
+        {
                 coinSaver1 = coinCounter;
                 coinSaver2 = collectedCoins;
                 timeLeft -= Time.deltaTime;
@@ -156,10 +151,10 @@ public class PlayerMovement : MonoBehaviour
 
                 sea = false;
                 building = true;
-            }
+        }
         
         else if (totalCorrect == 20)
-            {
+        {
                 timeLeft -= Time.deltaTime;
                 CanvasMessage.gameObject.SetActive(true);
                 coinSaver1 = coinCounter;
@@ -181,9 +176,9 @@ public class PlayerMovement : MonoBehaviour
 
                 building = false;
                 sky = true;
-            }
+        }
         else if (totalCorrect == 25)
-            {
+        {
                 timeLeft -= Time.deltaTime;
                 CanvasMessage.gameObject.SetActive(true);
                 coinSaver1 = coinCounter;
@@ -205,9 +200,9 @@ public class PlayerMovement : MonoBehaviour
 
                 sky = false;
                 space = true;
-            }
+        }
         else if (totalCorrect == 30)
-            {
+        {
                 timeLeft -= Time.deltaTime;
                 CanvasFinish.gameObject.SetActive(true);
                 Canvas1.gameObject.SetActive(false);
@@ -239,7 +234,6 @@ public class PlayerMovement : MonoBehaviour
                 targetPos = new Vector2(transform.position.x - increment, transform.position.y);
             }
         }
-
     public void MoveRight()
         {
             if (transform.position.x < 2)
