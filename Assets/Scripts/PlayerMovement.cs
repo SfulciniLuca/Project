@@ -127,7 +127,7 @@ public class PlayerMovement : MonoBehaviour
 
                 soil = false;
                 sea = true;
-            }
+        }
         else if (totalCorrect == 15)
         {
                 coinSaver1 = coinCounter;
@@ -152,7 +152,6 @@ public class PlayerMovement : MonoBehaviour
                 sea = false;
                 building = true;
         }
-        
         else if (totalCorrect == 20)
         {
                 timeLeft -= Time.deltaTime;
@@ -221,7 +220,7 @@ public class PlayerMovement : MonoBehaviour
                     home.BG6.gameObject.SetActive(false);
                     CanvasHome.gameObject.SetActive(true);
                 }
-            }
+        }
 
         TxtBar1.GetComponent<TMP_Text>().text = "Gemme collezionate: " + collectedCoins.ToString();
         TxtBar2.GetComponent<TMP_Text>().text = "Risposte corrette: " + totalCorrect.ToString();
