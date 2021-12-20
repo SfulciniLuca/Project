@@ -222,8 +222,8 @@ public class PlayerMovement : MonoBehaviour
                 }
         }
 
-        TxtBar1.GetComponent<TMP_Text>().text = "Gemme collezionate: " + collectedCoins.ToString();
-        TxtBar2.GetComponent<TMP_Text>().text = "Risposte corrette: " + totalCorrect.ToString();
+        TxtBar1.GetComponent<TMP_Text>().text = "Gemme raccolte: " + collectedCoins.ToString();
+        TxtBar2.GetComponent<TMP_Text>().text = "Risposte esatte: " + totalCorrect.ToString();
     }
 
     public void MoveLeft()

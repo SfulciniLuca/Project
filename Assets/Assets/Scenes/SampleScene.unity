@@ -354,6 +354,8 @@ MonoBehaviour:
     subiva una pioggia costante di meteoriti: era una palla di fuoco! Una volta cessati,
     la Terra si \xE8 raffreddata e la sua superficie si \xE8 solidificata in una
     crosta ed un primo strato di rocce."
+  - "La Terra non \xE8 completamente rotonda o sferica, la sua forma \xE8 irregolare,
+    essendo un po' pi\xF9 ampia all'equatore che ai poli."
   factSoil:
   - Per gran parte della storia della Terra sono stati presenti i dinosauri. Infatti,
     per circa 150 milioni di anni, sono stati la specie dominante sulla Terra fino
@@ -363,14 +365,22 @@ MonoBehaviour:
   factSea:
   - "Abbiamo esplorato solamente circa il 5% degli oceani. C\u2019\xE8 ancora molto
     da scoprire! "
+  - "Il punto pi\xF9 profondo del pianeta Terra \xE8 nella fossa delle Marianne,
+    che si trova nel nord-ovest del Pacifico, a est delle Isole Marianne vicino all'isola
+    di Guam."
   factBuilding:
   - "I grattacieli oscillano un po\u2019 quando soffia il vento, ma non preoccuparti!"
+  - "Il grattacielo pi\xF9 alto del mondo \xE8 il Burj Khalifa di Dubai, alto 829,80
+    metri: \xE8 la pi\xF9 importante meta turistica di Dubai nonch\xE9 uno dei suoi
+    simboli."
   factSky:
   - "Anche gli altri pianeti hanno un loro cielo. Siccome i tipi di gas presenti
     nelle loro atmosfere sono diversi, presentano dei colori differenti. Per esempio,
     il cielo su Marte \xE8 rosso. "
   factSpace:
   - "Quasi ogni stella che vedi \xE8 pi\xF9 grande e pi\xF9 luminosa del sole. "
+  - "Giove ha il giorno pi\xF9 corto di qualsiasi pianeta nel sistema solare: una
+    singola rotazione viene completata in meno di 10 ore"
   rand: 0
 --- !u!114 &64957283
 MonoBehaviour:
@@ -11471,8 +11481,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 177, y: 948}
-  m_SizeDelta: {x: 1429.6, y: 223.86}
+  m_AnchoredPosition: {x: 30, y: 1400}
+  m_SizeDelta: {x: 1429.6, y: 147.7995}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1087776058
 MonoBehaviour:
@@ -11496,7 +11506,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
-    m_FontSize: 150
+    m_FontSize: 130
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -13419,7 +13429,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Risposte corrette:'
+  m_text: 'Risposte esatte:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -13482,7 +13492,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -56.55493, w: 0}
+  m_margin: {x: 0, y: 0, z: 188.48584, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -13512,7 +13522,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 784, y: -24}
+  m_AnchoredPosition: {x: 775, y: -24}
   m_SizeDelta: {x: 681.04, y: 87.9327}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1288868493
@@ -16850,8 +16860,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 56.8207, y: 7.6682}
-  m_SizeDelta: {x: 1189.2413, y: 1540.756}
+  m_AnchoredPosition: {x: 15.0567, y: 34.443314}
+  m_SizeDelta: {x: 1439.826, y: 2367.0151}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1634468056
 GameObject:
@@ -16888,7 +16898,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1297}
+  m_AnchoredPosition: {x: 0, y: -1349}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1634468058
@@ -20070,7 +20080,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Gemme collezionate:'
+  m_text: 'Gemme raccolte:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -20133,7 +20143,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -56.55493, w: 0}
+  m_margin: {x: 0, y: 0, z: 95.76776, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
