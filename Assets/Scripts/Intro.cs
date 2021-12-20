@@ -6,11 +6,13 @@ public class Intro : MonoBehaviour
 
     public void Next()
     {
+        gameObject.SetActive(false);
         CanvasIntro2.gameObject.SetActive(true);
     }
 
     public void Play()
     {
+        gameObject.SetActive(false);
         CanvasMenu.gameObject.SetActive(true);
     }
 }
