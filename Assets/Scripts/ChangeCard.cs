@@ -9,7 +9,8 @@ public class ChangeCard : MonoBehaviour
     public String[] names, names2, names3;
     public int[] valori, valori2, valori3;
     private int soft = 1, hard = 0;
-    public int val, rand, totalQuestions, coinSaver1, coinSaver2;
+    public int val, rand, coinSaver1, coinSaver2;
+    public static int totalQuestions, funfactCounter = 0;
     public GameObject Photo, Txt, Timer;
     public GameObject Coin1, Coin2;
     public GameObject CanvasCorrect, CanvasWrong, CanvasFunFact, Canvas;
@@ -101,7 +102,8 @@ public class ChangeCard : MonoBehaviour
         timeLeft = 5.0f;
         randomUpdate = true;
         
-        totalQuestions = PlayerMovement.totalCorrect + PlayerMovement.totalNotCorrect;
+        totalQuestions = PlayerMovement.totalCorrect + PlayerMovement.totalNotCorrect - funfactCounter;
+        //Debug.Log(totalQuestions);
         if (totalQuestions == 10) //break with fun fact after every 10 questions
         {
             Button btn = click.GetComponent<Button>();
@@ -110,6 +112,7 @@ public class ChangeCard : MonoBehaviour
             coinSaver2 = PlayerMovement.collectedCoins;
             CanvasFunFact.gameObject.SetActive(true);
             Canvas.gameObject.SetActive(false);
+            funfactCounter += 10;
         }
     }
     public void HardSound()
@@ -128,7 +131,8 @@ public class ChangeCard : MonoBehaviour
         timeLeft = 5.0f;
         randomUpdate = true;
 
-        totalQuestions = PlayerMovement.totalCorrect + PlayerMovement.totalNotCorrect;
+        totalQuestions = PlayerMovement.totalCorrect + PlayerMovement.totalNotCorrect - funfactCounter;
+        //Debug.Log(totalQuestions);
         if (totalQuestions == 10) //break with fun fact after every 10 questions
         {
             Button btn = click.GetComponent<Button>();
@@ -137,6 +141,7 @@ public class ChangeCard : MonoBehaviour
             coinSaver2 = PlayerMovement.collectedCoins;
             CanvasFunFact.gameObject.SetActive(true);
             Canvas.gameObject.SetActive(false);
+            funfactCounter += 10;
         }
     }
     public void Continue()
@@ -145,6 +150,5 @@ public class ChangeCard : MonoBehaviour
         Canvas.gameObject.SetActive(true);
         PlayerMovement.coinCounter = coinSaver1;
         PlayerMovement.collectedCoins = coinSaver2;
-        totalQuestions -= 10;
     }
 }

@@ -7,7 +7,7 @@ public class Home : MonoBehaviour
     public GameObject TxtLetter, TxtLevel;
     public double prob;
     public int letter;
-    public static int level;
+    public static int level = 1;
     public static float speed;
     public GameObject BG1, BG2, BG3, BG4, BG5, BG6;
     
@@ -16,10 +16,17 @@ public class Home : MonoBehaviour
         Coin.gameObject.SetActive(true);
         Coin2.gameObject.SetActive(true);
         Player.gameObject.SetActive(true);
+        BG1.gameObject.SetActive(true);
+        BG2.gameObject.SetActive(false);
+        BG3.gameObject.SetActive(false);
+        BG4.gameObject.SetActive(false);
+        BG5.gameObject.SetActive(false);
+        BG6.gameObject.SetActive(false);
         Time.timeScale = 1;
         PlayerMovement.audioSource.Play();
         PlayerMovement.coinCounter = 0;
         PlayerMovement.collectedCoins = 0;
+        PlayerMovement.totalNotCorrect = PlayerMovement.totalCorrect = PlayerMovement.totalQuestions = 0;
         switch (level)
         {
             case 1: //Easy

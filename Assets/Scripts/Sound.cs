@@ -6,13 +6,13 @@ public class Sound : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip[] audioClipArray, audioClipArray2, audioClipArray3;
     public int[] valori, valori2, valori3;
-    private int soft = 1, hard = 0, val, rand;
+    private int soft = 1, hard = 0, val, rand, coinsaver1, coinsaver2, totalQuestions;
     public GameObject Timer;
-    public GameObject Coin1, Coin2;
-    public GameObject CanvasCorrect, CanvasWrong;
+    public GameObject Coin1, Coin2, CanvasFunFact, CanvasCorrect, CanvasWrong, Canvas;
     public float timeLeft = 5.0f;
     public Home home;
     private bool randomUpdate = true;
+    public Button click;
 
     public void Update()
     {
@@ -99,6 +99,19 @@ public class Sound : MonoBehaviour
         gameObject.SetActive(false);
         timeLeft = 5.0f;
         randomUpdate = true;
+        
+        totalQuestions = PlayerMovement.totalCorrect + PlayerMovement.totalNotCorrect - ChangeCard.funfactCounter;
+        //Debug.Log(totalQuestions);
+        if (ChangeCard.totalQuestions == 10) //break with fun fact after every 10 questions
+        {
+            Button btn = click.GetComponent<Button>();
+            btn.onClick.AddListener(Continue);
+            coinsaver1 = PlayerMovement.coinCounter;
+            coinsaver2 = PlayerMovement.collectedCoins;
+            CanvasFunFact.gameObject.SetActive(true);
+            Canvas.gameObject.SetActive(false);
+            ChangeCard.funfactCounter += 10;
+        }
     }
     public void HardSound()
     {
@@ -115,5 +128,25 @@ public class Sound : MonoBehaviour
         gameObject.SetActive(false);
         timeLeft = 5.0f;
         randomUpdate = true;
+        
+        totalQuestions = PlayerMovement.totalCorrect + PlayerMovement.totalNotCorrect - ChangeCard.funfactCounter;
+        //Debug.Log(totalQuestions);
+        if (ChangeCard.totalQuestions == 10) //break with fun fact after every 10 questions
+        {
+            Button btn = click.GetComponent<Button>();
+            btn.onClick.AddListener(Continue);
+            coinsaver1 = PlayerMovement.coinCounter;
+            coinsaver2 = PlayerMovement.collectedCoins;
+            CanvasFunFact.gameObject.SetActive(true);
+            Canvas.gameObject.SetActive(false);
+            ChangeCard.funfactCounter += 10;
+        }
+    }
+    public void Continue()
+    {
+        CanvasFunFact.gameObject.SetActive(false);
+        Canvas.gameObject.SetActive(true);
+        PlayerMovement.coinCounter = coinsaver1;
+        PlayerMovement.collectedCoins = coinsaver2;
     }
 }

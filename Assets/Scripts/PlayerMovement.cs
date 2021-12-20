@@ -4,7 +4,7 @@ using Random = UnityEngine.Random;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float increment, speed, timeLeft = 3.0f, timeFunFact = 5.0f;
+    public float increment, speed, timeLeft = 3.0f;
     public Vector2 targetPos;
     public static int collectedCoins = 0, coinCounter = 0, totalCorrect = 0, totalNotCorrect = 0, totalQuestions;
     private int coinSaver1, coinSaver2;
@@ -66,160 +66,141 @@ public class PlayerMovement : MonoBehaviour
             Canvas2.gameObject.SetActive(false);
             Coin1.gameObject.SetActive(false);
             Coin2.gameObject.SetActive(false);
-            timeLeft -= Time.deltaTime;
-            if (timeLeft <= 0.0f)
-            {
-                boolBaloon = true;
-            }
-
-            if (boolBaloon)
-            {
-                CanvasNoLives.gameObject.SetActive(false);
-                timeLeft = 5.0f;
-                CanvasHome.gameObject.SetActive(true);
-            }
         }
 
         if (totalCorrect == 5) // code to change te background after x correct answers
         {
-                coinSaver1 = coinCounter;
-                coinSaver2 = collectedCoins;
-                timeLeft -= Time.deltaTime;
-                CanvasMessage.gameObject.SetActive(true);
-                if (timeLeft <= 0.0f)
-                {
-                    boolBackGround = true;
-                }
+            coinSaver1 = coinCounter;
+            coinSaver2 = collectedCoins; 
+            timeLeft -= Time.deltaTime;
+            CanvasMessage.gameObject.SetActive(true);
+            if (timeLeft <= 0.0f)
+            {
+                boolBackGround = true;
+            }
 
-                if (boolBackGround)
-                {
-                    CanvasMessage.gameObject.SetActive(false);
-                    timeLeft = 3.0f;
-                    home.BG1.gameObject.SetActive(false);
-                    home.BG2.gameObject.SetActive(true);
-                    coinCounter = coinSaver1;
-                    collectedCoins = coinSaver2;
-                }
+            if (boolBackGround)
+            {
+                CanvasMessage.gameObject.SetActive(false);
+                timeLeft = 3.0f;
+                home.BG1.gameObject.SetActive(false);
+                home.BG2.gameObject.SetActive(true);
+                coinCounter = coinSaver1;
+                collectedCoins = coinSaver2;
+            }
 
-                earth = false; // to link fun facts to background
-                soil = true;
+            earth = false; // to link fun facts to background
+            soil = true;
         }
         else if (totalCorrect == 10)
         {
-                coinSaver1 = coinCounter;
-                coinSaver2 = collectedCoins;
-                timeLeft -= Time.deltaTime;
-                CanvasMessage.gameObject.SetActive(true);
-                if (timeLeft <= 0.0f)
-                {
-                    boolBackGround = true;
-                }
+            boolBackGround = false;    
+            coinSaver1 = coinCounter;
+            coinSaver2 = collectedCoins;
+            timeLeft -= Time.deltaTime;
+            CanvasMessage.gameObject.SetActive(true);
+            if (timeLeft <= 0.0f)
+            { 
+                boolBackGround = true;
+            }
 
-                if (boolBackGround)
-                {
-                    CanvasMessage.gameObject.SetActive(false);
-                    timeLeft = 3.0f;
-                    home.BG2.gameObject.SetActive(false);
-                    home.BG3.gameObject.SetActive(true);
-                    coinCounter = coinSaver1;
-                    collectedCoins = coinSaver2;
-                }
+            if (boolBackGround)
+            {
+                CanvasMessage.gameObject.SetActive(false); 
+                timeLeft = 3.0f;
+                home.BG2.gameObject.SetActive(false);
+                home.BG3.gameObject.SetActive(true);
+                coinCounter = coinSaver1;
+                collectedCoins = coinSaver2;
+            }
 
-                soil = false;
-                sea = true;
+            soil = false;
+            sea = true;
         }
         else if (totalCorrect == 15)
         {
-                coinSaver1 = coinCounter;
-                coinSaver2 = collectedCoins;
-                timeLeft -= Time.deltaTime;
-                CanvasMessage.gameObject.SetActive(true);
-                if (timeLeft <= 0.0f)
-                {
-                    boolBackGround = true;
-                }
+            boolBackGround = false;    
+            coinSaver1 = coinCounter;
+            coinSaver2 = collectedCoins;
+            timeLeft -= Time.deltaTime;
+            CanvasMessage.gameObject.SetActive(true);
+            if (timeLeft <= 0.0f)
+            {
+                boolBackGround = true;
+            }
 
-                if (boolBackGround)
-                {
-                    CanvasMessage.gameObject.SetActive(false);
-                    timeLeft = 3.0f;
-                    home.BG3.gameObject.SetActive(false);
-                    home.BG4.gameObject.SetActive(true);
-                    coinCounter = coinSaver1;
-                    collectedCoins = coinSaver2;
-                }
+            if (boolBackGround)
+            {
+                CanvasMessage.gameObject.SetActive(false);
+                timeLeft = 3.0f; 
+                home.BG3.gameObject.SetActive(false); 
+                home.BG4.gameObject.SetActive(true);
+                coinCounter = coinSaver1; 
+                collectedCoins = coinSaver2;
+            }
 
-                sea = false;
-                building = true;
+            sea = false;
+            building = true;
         }
         else if (totalCorrect == 20)
         {
-                timeLeft -= Time.deltaTime;
-                CanvasMessage.gameObject.SetActive(true);
-                coinSaver1 = coinCounter;
-                coinSaver2 = collectedCoins;
-                if (timeLeft <= 0.0f)
-                {
-                    boolBackGround = true;
-                }
+            boolBackGround = false;    
+            timeLeft -= Time.deltaTime;
+            CanvasMessage.gameObject.SetActive(true);
+            coinSaver1 = coinCounter;
+            coinSaver2 = collectedCoins;
+            if (timeLeft <= 0.0f)
+            {
+                boolBackGround = true;
+            }
 
-                if (boolBackGround)
-                {
-                    CanvasMessage.gameObject.SetActive(false);
-                    timeLeft = 3.0f;
-                    home.BG4.gameObject.SetActive(false);
-                    home.BG5.gameObject.SetActive(true);
-                    coinCounter = coinSaver1;
-                    collectedCoins = coinSaver2;
-                }
+            if (boolBackGround)
+            { 
+                CanvasMessage.gameObject.SetActive(false);
+                timeLeft = 3.0f;
+                home.BG4.gameObject.SetActive(false);
+                home.BG5.gameObject.SetActive(true); 
+                coinCounter = coinSaver1;
+                collectedCoins = coinSaver2;
+            }
 
-                building = false;
-                sky = true;
+            building = false;
+            sky = true;
         }
         else if (totalCorrect == 25)
         {
-                timeLeft -= Time.deltaTime;
-                CanvasMessage.gameObject.SetActive(true);
-                coinSaver1 = coinCounter;
-                coinSaver2 = collectedCoins;
-                if (timeLeft <= 0.0f)
-                {
-                    boolBackGround = true;
-                }
+            boolBackGround = false;
+            timeLeft -= Time.deltaTime;
+            CanvasMessage.gameObject.SetActive(true);
+            coinSaver1 = coinCounter;
+            coinSaver2 = collectedCoins;
+            if (timeLeft <= 0.0f)
+            {
+                boolBackGround = true;
+            }
 
-                if (boolBackGround)
-                {
-                    CanvasMessage.gameObject.SetActive(false);
-                    timeLeft = 3.0f;
-                    home.BG5.gameObject.SetActive(false);
-                    home.BG6.gameObject.SetActive(true);
-                    coinCounter = coinSaver1;
-                    collectedCoins = coinSaver2;
-                }
+            if (boolBackGround)
+            {
+                CanvasMessage.gameObject.SetActive(false); 
+                timeLeft = 3.0f; 
+                home.BG5.gameObject.SetActive(false);
+                home.BG6.gameObject.SetActive(true);
+                coinCounter = coinSaver1;
+                collectedCoins = coinSaver2;
+            }
 
-                sky = false;
-                space = true;
+            sky = false;
+            space = true;
         }
         else if (totalCorrect == 30)
         {
-                timeLeft -= Time.deltaTime;
-                CanvasFinish.gameObject.SetActive(true);
-                Canvas1.gameObject.SetActive(false);
-                Canvas2.gameObject.SetActive(false);
-                Coin1.gameObject.SetActive(false);
-                Coin2.gameObject.SetActive(false);
-                if (timeLeft <= 0.0f)
-                {
-                    boolBackGround = true;
-                }
-
-                if (boolBackGround)
-                {
-                    CanvasFinish.gameObject.SetActive(false);
-                    timeLeft = 3.0f;
-                    home.BG6.gameObject.SetActive(false);
-                    CanvasHome.gameObject.SetActive(true);
-                }
+            boolBackGround = false;   
+            CanvasFinish.gameObject.SetActive(true);
+            Canvas1.gameObject.SetActive(false);
+            Canvas2.gameObject.SetActive(false);
+            home.BG6.gameObject.SetActive(false);
+            Coin1.gameObject.SetActive(false);
+            Coin2.gameObject.SetActive(false);
         }
 
         TxtBar1.GetComponent<TMP_Text>().text = "Gemme raccolte: " + collectedCoins.ToString();
@@ -270,6 +251,8 @@ public class PlayerMovement : MonoBehaviour
             Canvas1.gameObject.SetActive(false);
             Canvas2.gameObject.SetActive(false);
             CanvasMenu.gameObject.SetActive(false);
+            CanvasFinish.gameObject.SetActive(false);
+            CanvasNoLives.gameObject.SetActive(false);
             CanvasHome.gameObject.SetActive(true);
         }
 

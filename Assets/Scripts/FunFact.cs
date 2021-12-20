@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -13,18 +14,18 @@ public class FunFact : MonoBehaviour
     public void Awake()
     {
         rand = Random.Range(0, factEarth.Length);
-        if (PlayerMovement.earth) 
-            Txt.GetComponent<Text>().text = factEarth[rand];
-        else if (PlayerMovement.soil)
-            Txt.GetComponent<Text>().text = factSoil[rand];
-        else if (PlayerMovement.sea)
-            Txt.GetComponent<Text>().text = factSea[rand];
-        else if (PlayerMovement.building)
-            Txt.GetComponent<Text>().text = factBuilding[rand];
-        else if (PlayerMovement.sky)
-            Txt.GetComponent<Text>().text = factSky[rand];
-        else if (PlayerMovement.space)
-            Txt.GetComponent<Text>().text = factSpace[rand];
+        if (PlayerMovement.earth == true) 
+            Txt.GetComponent<TextMeshProUGUI>().text = factEarth[rand];
+        if (PlayerMovement.soil == true)
+            Txt.GetComponent<TextMeshProUGUI>().text = factSoil[rand];
+        if (PlayerMovement.sea == true)
+            Txt.GetComponent<TextMeshProUGUI>().text = factSea[rand];
+        if (PlayerMovement.building == true)
+            Txt.GetComponent<TextMeshProUGUI>().text = factBuilding[rand];
+        if (PlayerMovement.sky == true)
+            Txt.GetComponent<TextMeshProUGUI>().text = factSky[rand];
+        if (PlayerMovement.space == true)
+            Txt.GetComponent<TextMeshProUGUI>().text = factSpace[rand];
     }
 }
     
